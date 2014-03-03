@@ -1,2 +1,16 @@
-<h1>Viddo</h1>
-<p>Start discovering great videos.</p>
+<% if signed_in? %>
+	<div class="row">
+		<aside class="span4">
+			<section>
+				<%= render 'shared/user_info' %>
+			</section>
+		</aside>
+	</div>
+<% else %>
+	<div class="center hero-unit">
+		<h1>Welcome to Viddo! An online video-based platform for discovering, creating and sharing lists of your favourite youtube videos</h1>
+		<h2>
+
+		 <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+	</div>
+<% end %>
