@@ -6,6 +6,7 @@ A discovery/recommendation engine for YouTube videos. This is our final project 
 >>> Gems used
 - Sorcery
 - Figaro
+- Oauth
 
 >>> Current Features
 - None
