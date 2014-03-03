@@ -5,10 +5,13 @@ A discovery/recommendation engine for YouTube videos. This is our final project 
 
 >>> Gems used
 - Sorcery
-- CanCan
+- Figaro
 
 >>> Current Features
 - None
 
 >>> Future Features
-- Many
+- Discovery videos by tags and categories
+- Vote
+- See most popular videos
+- Save videos to a Watch Later list
