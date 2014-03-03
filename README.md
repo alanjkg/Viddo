@@ -3,15 +3,15 @@ Welcome to Viddo
 A discovery/recommendation engine for YouTube videos. This is our final project for Bitmaker Labs. Feel free to fork or clone this repository.
 ----------------------
 
->>> Gems used
+### Gems used
 - Sorcery
 - Figaro
 - Oauth
 
->>> Current Features
+### Current Features
 - None
 
->>> Future Features
+### Future Features
 - Discovery videos by tags and categories
 - Vote
 - See most popular videos
