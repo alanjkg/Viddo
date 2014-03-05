@@ -3,16 +3,13 @@ class UsersController < ApplicationController
 	before_action :correct_user,   only: [:edit, :update]
 	before_action :admin_user,     only: :destroy
 	
-
 	def new 
 		@user = User.new
 	end 
 
-
 	def index
 		@user = User.all
 	end 
-
 
 	def create
 		@user = User.new(user_params)
@@ -26,7 +23,7 @@ class UsersController < ApplicationController
 	end 
 
 	def edit
-		@user = Uesr.find(params[:id])
+		@user = User.find(params[:id])
 	end 
 
 	def update
