@@ -22,9 +22,11 @@ class ListsController < ApplicationController
 	end 
 
 	def edit
+		
 	end 
 
 	def update
+
 	end 
 
 	def destroy
@@ -34,14 +36,14 @@ class ListsController < ApplicationController
 
 	private 
 
-	def list_params
-		params.require(:list).permit(:category, :user_id)
-	end 
+		def list_params
+			params.require(:list).permit(:category, :user_id)
+		end 
 
-	def correct_user
-		@list = current_user.lists.find_by(id: perams[:id])
-		redirect_to root_url if @list.nil?
-	end 
+		def correct_user
+			@list = current_user.lists.find_by(id: perams[:id])
+			redirect_to root_url if @list.nil?
+		end 
 
 
 end 
