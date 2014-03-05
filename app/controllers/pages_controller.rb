@@ -9,5 +9,8 @@ class PagesController < ApplicationController
   def about
   end 
 
+  def join
+  end 
+
 
 end

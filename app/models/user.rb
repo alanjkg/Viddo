@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	
 	before_save { self.email = email.downcase } # makes sure email address is all lower-case before it gets
 	# saved in the database; reason is not all database adapters use case-sensitive indices and we want to ensure
 	# email uniqueness by using the before_save "call back"

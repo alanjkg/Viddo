@@ -1,5 +1,6 @@
 <% if signed_in? %>
 	<div class="row">
+		<h1>Welcome to Viddo! An online video-based platform for discovering, creating and sharing lists of your favourite YouTube videos</h1> 
 		<aside class="span4">
 			<section>
 				<%= render 'shared/user_info' %>
@@ -9,7 +10,6 @@
 <% else %>
 	<div class="center hero-unit">
 		<h1>Welcome to Viddo! An online video-based platform for discovering, creating and sharing lists of your favourite YouTube videos</h1>
-		<h2>
 
 		 <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 	</div>
