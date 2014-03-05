@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-default navbar-static-top" role="navigation">
 	<div class="navbar-inner">
 		<div class="container">
 			<%= link_to "Viddo", root_path, id: "logo" %> 
@@ -8,7 +8,6 @@
 					<li><%= link_to "About",	about_path %></li>
 					<li>
 					<% if signed_in? %>
-						<li><%= link_to "Users",	'users_path' %></li>
 						<li id="fat-menu" class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								Account <b class="caret"></b>
