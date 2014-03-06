@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @search_response = YOUTUBE_CLIENT.execute!(
       :api_method => YOUTUBE.videos.list,
       :parameters => {:part => 'id,snippet', :videoCategoryId => '17', :chart => 'mostPopular'}
-    )   
+    )
   end
 
   def contact
