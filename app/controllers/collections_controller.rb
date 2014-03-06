@@ -3,6 +3,7 @@ class CollectionsController < ApplicationController
 	before_action :correct_user, only: :destroy
 
 	def new
+		@collection = Collection.new
 	end
 
 	def index
