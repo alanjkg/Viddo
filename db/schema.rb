@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306011744) do
+ActiveRecord::Schema.define(version: 20140306232151) do
 
   create_table "collections", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.string   "image"
   end
 
-  create_table "relationships", force: true do |t|
-    t.integer  "video_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "collection_id"
+  create_table "collections_videos", force: true do |t|
+    t.integer "video_id"
+    t.integer "collection_id"
   end
 
   create_table "users", force: true do |t|
