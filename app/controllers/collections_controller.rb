@@ -7,7 +7,8 @@ class CollectionsController < ApplicationController
 	end 
 
 	def index
-		@collections = Collection.all 
+		@collections = Collection.all
+		@collections = Collection.search(params[:search])
 	end 
 
 	def create 
