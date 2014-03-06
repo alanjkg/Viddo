@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
 	belongs_to :user
-	belongs_to :relationship
+	has_many :collections, through: :relationships 
 
 end 
