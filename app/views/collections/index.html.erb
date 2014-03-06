@@ -1,0 +1,15 @@
+<% provide(:title, 'All collections') %>
+<h1>Collections</h1>
+	<h4>Videos grouped by theme or topic</h4>
+
+
+<%= link_to "Make New Collection", new_collection_path %>
+
+<div class="row">
+	<ul class="span6 offset3">
+		<% @collections.each do |collection| %>
+			<li> <%= collection.title %></li>
+		<% end %> 
+	</ul>
+</div> 
+
