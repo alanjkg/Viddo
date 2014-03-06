@@ -1,6 +1,8 @@
 class VideosController < ApplicationController
   def index
+  end
 
+  def new
   end
 
   def create
@@ -26,4 +28,3 @@ class VideosController < ApplicationController
 
 
 end
-
