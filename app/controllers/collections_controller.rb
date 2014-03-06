@@ -1,49 +1,49 @@
-class CollectionsController < ApplicationController 
+class CollectionsController < ApplicationController
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user, only: :destroy
 
 	def new
-	end 
+	end
 
 	def index
-	end 
+	end
 
-	def create 
+	def create
 		@collection = current_user.collections.build(collection_params)
 		if @collection.save
 			flash[:success] = "Collection created!"
 			redirect_to root_url
 		else
 			render 'static_pages/home'
-		end 
-	end 
+		end
+	end
 
 	def show
-	end 
+	end
 
 	def edit
-		
-	end 
+
+	end
 
 	def update
 
-	end 
+	end
 
 	def destroy
 
-	end 
+	end
 
 
-	private 
+	private
 
 		def collection_params
 			params.require(:collection).permit(:title, :user_id)
-		end 
+		end
 
 		def correct_user
 			@collection = current_user.collections.find_by(id: perams[:id])
-			redirect_to root_url if @list.nil?
-		end 
+			redirect_to root_url if @collection.nil?
+		end
 
 
-end 
+end
