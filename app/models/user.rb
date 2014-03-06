@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	has_many :lists 
+	has_many :collections
+	has_many :videos, through: :collections
 	
 	before_save { self.email = email.downcase } # makes sure email address is all lower-case before it gets
 	# saved in the database; reason is not all database adapters use case-sensitive indices and we want to ensure
