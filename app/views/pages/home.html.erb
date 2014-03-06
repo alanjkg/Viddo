@@ -18,6 +18,9 @@
 	<% @search_response.data.items.each do |search_result| %>
   		<%= search_result.snippet.title %><br/>
         <div id="player"></div>
-  		<%= image_tag "#{search_result.snippet.thumbnails.medium.url}" %><br/>
+
+  		<div id="player">http://www.youtube.com/watch?v=#{search_result.id}</div><br/>
+        <%= video_tag "www.youtube.com/embed/{search_result.id}", controls: :true %><br/>
   	<% end %>
 </div>
+
