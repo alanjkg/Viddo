@@ -19,6 +19,10 @@ class CollectionsController < ApplicationController
 	end
 
 	def show
+		@collection = Collection.find(params[:id])
+		if current_user
+			@video = @collection.videos.build
+		end
 	end
 
 	def edit
@@ -41,7 +45,7 @@ class CollectionsController < ApplicationController
 		end
 
 		def correct_user
-			@collection = current_user.collections.find_by(id: perams[:id])
+			@collection = current_user.collections.find_by(id: params[:id])
 			redirect_to root_url if @collection.nil?
 		end
 

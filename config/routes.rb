@@ -1,8 +1,11 @@
 Viddo::Application.routes.draw do
   resources :users 
-  resources :collections
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :collections do
+    resources :videos
+  end
 
+  
+  resources :sessions, only: [:new, :create, :destroy]
 
   root 'pages#home'
 
