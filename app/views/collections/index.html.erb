@@ -1,0 +1,13 @@
+<% provide(:title, 'All collections') %>
+<h1>All collections</h1>
+
+<%= link_to "Make New Collection", new_collection_path %>
+
+<div class="row">
+	<ul class="span6 offset3">
+		<% @collections.each do |collection| %>
+			<li> <%= collection.title %></li>
+		<% end %> 
+	</ul>
+</div> 
+
