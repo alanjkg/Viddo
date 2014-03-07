@@ -26,7 +26,6 @@ class VideosController < ApplicationController
 			redirect_to root_url if @video.nil?
 		end
 
-
 end
 
   
