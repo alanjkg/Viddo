@@ -1,6 +1,9 @@
 <% if signed_in? %>
 	<div class="row">
-		<h1>Welcome to Viddo! An online video-based platform for discovering, creating and sharing lists of your favourite YouTube videos</h1> 
+		<div class="center hero-unit">
+		<h1>Welcome to Viddo!</h1>
+		 <%= link_to "Discover Videos", discover_path, class: "btn btn-large btn-primary" %>
+		</div>
 		<aside class="span4">
 			<section>
 				<%= render 'shared/user_info' %>
@@ -9,6 +12,7 @@
 	</div>
 <% else %>
 	<div class="center hero-unit">
+
 		<h1>Welcome to Viddo! An online video-based platform for discovering, creating and sharing lists of your favourite YouTube videos</h1>
 		 <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 	</div>
@@ -23,4 +27,10 @@
         <%= video_tag "www.youtube.com/embed/{search_result.id}", controls: :true %><br/>
   	<% end %>
 </div>
+
+	<h1>Welcome to Viddo!</h1> 
+	<h5>Curating a collection of the world's best videos.</h5>
+	<%= link_to "Sign up", signup_path, class: "btn btn-large btn-primary" %>
+	</div>
+<% end %>
 

@@ -1,0 +1,6 @@
+<div>
+    <% @search_response.data.items.each do |search_result| %>
+        <%= search_result.snippet.title %><br/>
+        <%= video "#{search_result.id}" %><br/>
+    <% end %>
+</div>

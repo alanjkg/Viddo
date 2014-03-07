@@ -9,4 +9,12 @@ module ApplicationHelper
 			"#{base_title} | #{page_title}"
 		end
 	end 
+
+     def video video_id
+        video = '<iframe id="player" type="text/html" width="640" height="390"
+        src="http://www.youtube.com/embed/' + video_id + '?enablejsapi=1&origin=http://localhost:3000"
+        frameborder="0"></iframe>'
+        
+        video.html_safe
+    end
 end
