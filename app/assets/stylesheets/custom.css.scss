@@ -46,15 +46,37 @@ h1 {
 	letter-spacing: -2px;
 	margin-bottom: 30px;
 	text-align: center;
+	font-family: Georgia;
 }
 h2 {
+	font-size: 1.2em;
+	letter-spacing: -1px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-weight: normal;
+	color: Dark Navy;
+}
+
+h4 { 
 	font-size: 1.2em;
 	letter-spacing: -1px;
 	margin-bottom: 30px;
 	text-align: center;
 	font-weight: normal;
-	color: Dark Navy;
+	color: Light Gray;
 }
+
+h5 { 
+	font-size: 1.1em;
+	letter-spacing: -1px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-weight: normal;
+	color: Navy;
+}
+
+
+
 
 p {
 	font-size: 1.1em;
@@ -123,21 +145,4 @@ input {
 /* Collections Index */
 
 
-	h4 { 
-		font-size: 1.2em;
-		letter-spacing: -1px;
-		margin-bottom: 30px;
-		text-align: center;
-		font-weight: normal;
-		color: Gray;
-	}
-
-	h5 { 
-		font-size: 1.1em;
-		letter-spacing: -1px;
-		margin-bottom: 20px;
-		text-align: center;
-		font-weight: normal;
-		color: Navy;
-	}
 
