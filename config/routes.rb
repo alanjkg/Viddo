@@ -1,9 +1,7 @@
 Viddo::Application.routes.draw do
   resources :users 
-  resources :collections do
-    resources :videos
-  end
-
+  resources :collections
+  resources :videos
   
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -15,6 +13,5 @@ Viddo::Application.routes.draw do
   match '/about',       to: 'pages#about',          via: 'get'
   match '/contact',     to: 'pages#contact',        via: 'get'
   match '/join',        to: 'pages#join',           via: 'get'
-  match '/discover', to: 'pages#player', via: 'get'
 
 end

@@ -1,10 +1,10 @@
 <header class="navbar navbar-default navbar-static-top" role="navigation">
 	<div class="navbar-inner">
 		<div class="container">
-			<%= link_to "Viddo", root_path, id: "logo" %>
+			<%= link_to "Viddo", root_path, class: "navbar-brand" %>
 			<nav>
 				<ul class="nav pull-right">
-					<li><%= link_to "Discover Videos", discover_path %></li>
+					<li><%= link_to "Watch Videos", videos_path %></li>
 					<li><%= link_to "About", about_path %></li>
 					<li>
 					<% if signed_in? %>

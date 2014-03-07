@@ -1,0 +1,8 @@
+<div class="video">
+    <div id="player"></div>
+    <iframe src="//www.youtube.com/embed/FKWwdQu6_ok?enablejsapi=1&html5=1" frameborder="0" allowfullscreen id="video"></iframe>
+
+    <% @search_response.data.items.each do |search_result| %>
+        <%= search_result.snippet.title %><br/>
+    <% end %>
+</div>
