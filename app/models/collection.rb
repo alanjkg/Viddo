@@ -4,8 +4,7 @@ class Collection < ActiveRecord::Base
 
 	validates :title, presence: true, length: { maximum: 70 }
 	validates :description, presence: true, length: { maximum: 175 }
-	validates :image, presence: true 
-	validates :title, :description, uniqueness: true 
+	validates :image, uniqueness: true
 
 
 	

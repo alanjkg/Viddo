@@ -22,7 +22,7 @@
 <div class="row">
 	<ul class="span6 offset3">
 		<% @collections.each do |collection| %>
-			<li> <%= collection.title %></li>
+			<li> <%= link_to collection.title, collection_path(collection) %></li>
 		<% end %> 
 	</ul>
 </div> 
