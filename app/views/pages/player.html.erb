@@ -1,0 +1,9 @@
+<div>
+    <% @search_response.data.items.each do |search_result| %>
+        <%= search_result.snippet.title %><br/>
+        <div id="player"></div>
+
+        <div id="player">http://www.youtube.com/watch?v=#{search_result.id}</div><br/>
+        <%= video_tag "www.youtube.com/embed/{search_result.id}", controls: :true %><br/>
+    <% end %>
+</div>
