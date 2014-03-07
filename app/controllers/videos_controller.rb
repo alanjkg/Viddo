@@ -22,7 +22,7 @@ class VideosController < ApplicationController
   private
 
 		def video_params
-			params.require(:video).permit(:user_id)
+			params.require(:video).permit(:user_id, :title, :description, :youtube_id)
 		end
 
 		def correct_user
@@ -38,6 +38,4 @@ class VideosController < ApplicationController
           :parameters => {:part => 'id,snippet', :videoCategoryId => '17', :chart => 'mostPopular'}
         )
     end
-
-
 end

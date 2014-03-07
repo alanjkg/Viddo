@@ -1,6 +1,7 @@
-class CollectionsController < ApplicationController
+class CollectionsController < ApplicationController 
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user, only: :destroy
+	layout 'application', :except => [:index, :new, :create, :show]
 
 	def new
 		@collection = Collection.new
@@ -9,15 +10,24 @@ class CollectionsController < ApplicationController
 	def index
 	end
 
+	end 
+
+	def index
+		@collections = Collection.all
+		@collections = Collection.search(params[:search])
+	end 
+
+
 	def create
 		@collection = current_user.collections.build(collection_params)
 		if @collection.save
-			flash[:success] = "Collection created!"
-			redirect_to root_url
+			flash[:success] = "New Collection created!"
+			redirect_to collections_url
 		else
-			render 'static_pages/home'
-		end
-	end
+			render 'collections#index'
+		end 
+	end 
+
 
 	def show
 		@collection = Collection.find(params[:id])
@@ -26,13 +36,14 @@ class CollectionsController < ApplicationController
 		end
 	end
 
-	def edit
 
-	end
+	def edit
+	end 
 
 	def update
 
-	end
+	end 
+
 
 	def destroy
 
@@ -42,7 +53,7 @@ class CollectionsController < ApplicationController
 	private
 
 		def collection_params
-			params.require(:collection).permit(:title, :user_id)
+			params.require(:collection).permit(:title, :user_id, :description, :image)
 		end
 
 		def correct_user
@@ -50,5 +61,5 @@ class CollectionsController < ApplicationController
 			redirect_to root_url if @collection.nil?
 		end
 
+end 
 
-end

@@ -1,0 +1,29 @@
+<% provide(:title, 'All collections') %>
+<h1>Collections</h1>
+	<h4>Videos grouped by theme or topic</h4>
+
+<% form_tag collections_path, :method => 'get' do %>
+	<p>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", :name => nil %>
+	</p>
+<% end %> 
+
+<!-- Search function still not working  -->
+
+<div class="container">
+
+</div>
+
+<div class="container">
+<%= link_to "Make New Collection", new_collection_path %>
+</div>
+
+<div class="row">
+	<ul class="span6 offset3">
+		<% @collections.each do |collection| %>
+			<li> <%= link_to collection.title, collection_path(collection) %></li>
+		<% end %> 
+	</ul>
+</div> 
+
