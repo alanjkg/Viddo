@@ -12,6 +12,21 @@ a {
         text-decoration: none;
     }
 }
+
+/* Typography */
+
+/* Button */
+.button {
+    background: #FF4E50;
+    color: #fff;
+    border-radius: 1px;
+    margin-top: 1em;
+    padding: 1em 2em;
+    &:hover {
+        color: #fff;
+    }
+}
+
 .navbar-default .navbar-nav > li > a {
     color: #FF3D00;
     font-weight: 700;
@@ -29,3 +44,24 @@ a {
     }
 }
 
+/* Footer */
+.footer {
+    background: #f2f1f1;
+    min-height: 280px;
+    padding: 2em 0;
+    margin-top: 10em;
+
+    ul {
+        li {
+            display: inline-block;
+            text-decoration: none;
+            a {
+            color: #555;
+                &:hover {
+                    color: #fff;   
+                }
+            }
+
+        }
+    }
+}
