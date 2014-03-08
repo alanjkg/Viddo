@@ -1,8 +1,7 @@
-<div class="video">
-    <div id="player"></div>
-    <iframe src="//www.youtube.com/embed/<%= @video.youtube_id %>?enablejsapi=1&html5=1" frameborder="0" allowfullscreen id="video"></iframe>
-</div>
+<div class="container">
+    <h2>Most Popular Videos</h2>
 
 <% @videos.each do |video| %>
     <%= link_to video.title, video_path(video) %><br/>
 <% end %>
+</div>
