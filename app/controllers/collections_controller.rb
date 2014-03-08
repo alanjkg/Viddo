@@ -8,11 +8,6 @@ class CollectionsController < ApplicationController
 	end
 
 	def index
-	end
-
-	end 
-
-	def index
 		@collections = Collection.all
 		@collections = Collection.search(params[:search])
 	end 
@@ -61,5 +56,5 @@ class CollectionsController < ApplicationController
 			redirect_to root_url if @collection.nil?
 		end
 
-end 
+end
 

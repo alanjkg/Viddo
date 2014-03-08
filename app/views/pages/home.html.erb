@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <div class="container">
   	<% if signed_in? %>
-   	<h1>Welcome to Viddo!</h1>
-   	<h3>Curate a collection of the world's best videos.</h3>
+   	<h1>Watching Videos With Strangers Doesn't Have to be Awkward</h1>
+   	<h3>Chat about, share and discover the best videos as curated by you.</h3>
 		 <%= link_to "Discover Videos", discover_path, class: "btn btn-primary btn-lg" %>
 	<% else %>
-	<h1>Welcome to Viddo!</h1>
-		<h4>Curate a collection of the world's best videos.</h4>
+		<h1>Watching Videos With Strangers Doesn't Have to be Awkward</h1>
+		<h4>Chat about, share and discover the best videos as curated by you.</h4>
 		 <%= link_to "Sign up now!", signup_path, class: "btn btn-primary btn-lg" %>
 	<% end %>
   </div>

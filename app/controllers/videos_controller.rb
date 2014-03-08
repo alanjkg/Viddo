@@ -12,16 +12,6 @@ class VideosController < ApplicationController
   end
 
   def create
-  	@video = Video.new
-    @video.title = @search_response.snippet.title
-    @video.description = @search_response.snippet.description
-    @video.youtube_id = @search_response.id
-  	if @video.save
-  		flash[:success] = "Video made!"
-  		redirect_to root_url
-  	else
-  		render 'static_pages/home'
-  	end
   end
 
   private

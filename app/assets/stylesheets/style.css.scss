@@ -5,17 +5,27 @@ body {
     
 }
 
+a {
+    color: #555;
+    &:hover {
+        color: #888;
+        text-decoration: none;
+    }
+}
+.navbar-default .navbar-nav > li > a {
+    color: #FF3D00;
+    font-weight: 700;
+}
+
 .navbar {
+    background: #EEE657;
+    height: 210px;
     box-shadow: 0;
     border: 0;
     border-radius: 0;
-    ul {
-        li{
-            a {
-                color: #ECF7C1;
-                text-shadow: none;
-            }
-        }
+    .navbar-brand {
+        color: #fff;
+        font-weight: 700;
     }
 }
 
