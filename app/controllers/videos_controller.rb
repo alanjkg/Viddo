@@ -1,9 +1,11 @@
 class VideosController < ApplicationController
   before_action :grab_videos, only: :index
-  def index   
+  def index
+    @videos = Video.all
   end
 
   def show
+    @video = Video.find(params[:id])
   end
 
   def new
@@ -38,10 +40,12 @@ class VideosController < ApplicationController
     def grab_videos
       @search_response = YOUTUBE_CLIENT.execute!(
           :api_method => YOUTUBE.videos.list,
-          :parameters => {:part => 'id,snippet', :videoCategoryId => '17', :chart => 'mostPopular'}
+          :parameters => {:part => 'id,snippet', :maxResults => 50, :chart => 'mostPopular'}
         )
 
-      @youtube_video = @search_response.data.items[rand(0..4)]
+      @search_response.data.items.each do |video|
+        @youtube_video = video
+      end
 
       @video = Video.find_by_youtube_id(@youtube_video.id)
 

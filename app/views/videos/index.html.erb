@@ -2,3 +2,7 @@
     <div id="player"></div>
     <iframe src="//www.youtube.com/embed/<%= @video.youtube_id %>?enablejsapi=1&html5=1" frameborder="0" allowfullscreen id="video"></iframe>
 </div>
+
+<% @videos.each do |video| %>
+    <%= link_to video.title, video_path(video) %><br/>
+<% end %>

@@ -1,37 +1,49 @@
-<header class="navbar navbar-default navbar-static-top" role="navigation">
-	<div class="navbar-inner">
-		<div class="container">
-			<%= link_to "Viddo", root_path, class: "navbar-brand" %>
-			<nav>
-				<ul class="nav pull-right">
-					<li><%= link_to "Watch Videos", videos_path %></li>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
+      <%= link_to "Viddo", root_path, class: "navbar-brand" %>
 
-					<li><%= link_to "Home",	root_path %></li>
-					<li><%= link_to "Discover Videos", discover_path %></li>
-					<li><%= link_to "About", about_path %></li>
-					<li><%= link_to "Collections", collections_path %></li>
-					<% if signed_in? %>
-						<li id="fat-menu" class="dropdown"></li>
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								Account <b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">
-								<li><%= link_to "Profile", current_user %></li>
-								<li><%= link_to "Settings", edit_user_path(current_user) %></li>
-								<li class="divider"></li>
-								<li>
-									<%= link_to "Sign out", signout_path, method: "delete" %>
-								</li>
-							</ul>
-						</li>
-					<% else %>
-						<li><%= link_to "Sign in", signin_path %></li>
-					<% end %>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</header>
+    </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	<li><%= link_to "Watch Videos", videos_path %></li>
+      	<li><%= link_to "Collections", collections_path %></li>
+		<li><%= link_to "About", about_path %></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+      	<% if signed_in? %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Profile", current_user %></li>
+			<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+			<li class="divider"></li>
+			<li><%= link_to "Log Out", signout_path, method: "delete" %></li>
+          </ul>
+        </li>
+        <% else %>
+        	<li><%= link_to "Log In", signin_path %></li>
+        	<li><%= link_to "Sign Up", signup_path %></li>
+
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 

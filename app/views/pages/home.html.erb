@@ -1,20 +1,13 @@
-<% if signed_in? %>
-	<div class="row">
-		<div class="center hero-unit">
-		<h1>Welcome to Viddo!</h1>
-		 <%= link_to "Discover Videos", discover_path, class: "btn btn-large btn-primary" %>
-		</div>
-		<aside class="span4">
-			<section>
-				<%= render 'shared/user_info' %>
-			</section>
-		</aside>
-	</div>
-<% else %>
-	<div class="center hero-unit">
-
-		<h1>Welcome to Viddo! An online video-based platform for discovering, creating and sharing lists of your favourite YouTube videos</h1>
-		 <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-	</div>
-<% end %>
-
+<div class="jumbotron">
+  <div class="container">
+  	<% if signed_in? %>
+   	<h1>Welcome to Viddo!</h1>
+   	<h3>Curate a collection of the world's best videos.</h3>
+		 <%= link_to "Discover Videos", discover_path, class: "btn btn-primary btn-lg" %>
+	<% else %>
+	<h1>Welcome to Viddo!</h1>
+		<h4>Curate a collection of the world's best videos.</h4>
+		 <%= link_to "Sign up now!", signup_path, class: "btn btn-primary btn-lg" %>
+	<% end %>
+  </div>
+</div>

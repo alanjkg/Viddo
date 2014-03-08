@@ -6,7 +6,17 @@ body {
 }
 
 .navbar {
-    background: #14374B;
+    background: #ECF7C1;
     box-shadow: 0;
     border: 0;
+    border-radius: 0;
+    ul {
+        li{
+            a {
+                color: #ECF7C1;
+                text-shadow: none;
+            }
+        }
+    }
 }
+
