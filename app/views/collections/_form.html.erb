@@ -1,0 +1,29 @@
+<%= form_for @collection do |f| %>
+<% if @collection.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@collection.errors.count, "error") %> prohibited this collection: from being saved:</h2>
+
+	<ul>
+		<% @collection.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@collection) do |f| %>
+		<%= f.label :'Name your collection here' %>
+		<%= f.text_field :title %>
+		<%= f.label :'Describe your collection here' %>
+		<%= f.text_field :description %>
+		<%= f.label :'Insert collection picture here' %>
+		<%= f.text_field :image %>
+
+		<%= f.submit 'Edit new collection', class: 'btn btn-large btn-primary' %>
+		<% end %>
+		<% end %>
+
+	</div>
+</div>

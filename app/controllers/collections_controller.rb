@@ -1,4 +1,4 @@
-class CollectionsController < ApplicationController 
+class CollectionsController < ApplicationController
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user, only: :destroy
 	layout 'application', :except => [:index, :new, :create, :show]
@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
 	def index
 		@collections = Collection.all
 		@collections = Collection.search(params[:search])
-	end 
+	end
 
 
 	def create
@@ -20,8 +20,8 @@ class CollectionsController < ApplicationController
 			redirect_to collections_url
 		else
 			render 'collections#index'
-		end 
-	end 
+		end
+	end
 
 
 	def show
@@ -33,11 +33,19 @@ class CollectionsController < ApplicationController
 
 
 	def edit
-	end 
+		@collection = Collection.find(params[:id])
+	end
 
 	def update
 
-	end 
+		@collection = Collection.find(params[:id])
+		if @collection.update_attributes(collection_params)
+			redirect_to collection_path(@collection)
+		else
+			render :edit
+		end
+
+	end
 
 
 	def destroy
