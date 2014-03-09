@@ -2,4 +2,26 @@
 <h2><%= @video.title %></h2>
 <%= video @video.youtube_id %>
 
+<%= form_for :collection, url: collections_path, method: :post do |f| %>
+
+	<%= f.hidden_field :video_id, value: @video.id %>
+
+	<%= f.collection_select(:collection_id, Collection.all, :id, :title,
+	:include_blank => "Please select a Collection...") %>
+
+	<%= f.label :'Leave a Comment' %>
+	<%= f.text_field :description %>
+
+	<%= f.submit 'Add to Collection', class: 'btn btn-large btn-primary' %>
+<% end %>
+
 </div>
+
+<!--
+	params = {
+		collection: {
+			collection_id: 1,
+			video_id: 1
+		}
+	}
+ -->
