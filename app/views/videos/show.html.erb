@@ -1,20 +1,17 @@
 <div class="container">
-<h2><%= @video.title %></h2>
-<%= video @video.youtube_id %>
+	<h2><%= @video.title %></h2>
+	<%= video @video.youtube_id %>
 
-<%= form_for :collection, url: collections_path, method: :post do |f| %>
 
-	<%= f.hidden_field :video_id, value: @video.id %>
+	<%= form_tag add_video_collections_path, method: :patch do %>
+		<%= hidden_field_tag :video_id, @video.id %>
 
-	<%= f.collection_select(:collection_id, @collections, :id, :title,
-	:include_blank => "Please select a Collection...") %>
+		<%= collection_select(:collection, :id, @collections, :id, :title,
+		:include_blank => "Please select a Collection...") %>
 
-	<%= f.label :'Leave a Comment' %>
-	<%= f.text_field :description %>
+		<%= submit_tag 'Add to Collection', class: 'btn btn-large btn-primary' %>
 
-	<%= f.submit 'Add to Collection', class: 'btn btn-large btn-primary' %>
-<% end %>
-
+	<% end %>
 </div>
 
 <!--

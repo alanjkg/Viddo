@@ -1,11 +1,18 @@
 Viddo::Application.routes.draw do
-  resources :users 
-  resources :collections
+  # match '/add_video_to_collection', to: 'collections_videos#create', via: 'post'
+  resources :users do
+    resources :collections
+  end
+
+  resources :collections do
+    collection do
+      patch :add_video
+    end
+  end
+
   resources :videos
   
   resources :sessions, only: [:new, :create, :destroy]
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :collections
   
   root 'pages#home'
 
@@ -17,7 +24,5 @@ Viddo::Application.routes.draw do
   match '/join',        to: 'pages#join',           via: 'get'
 
   match '/collections', to: 'collections#index',    via: 'get'
-
-  match '/discover', to: 'pages#player', via: 'get'
 
 end
