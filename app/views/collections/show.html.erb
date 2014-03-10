@@ -13,9 +13,16 @@
 			<h2>
 				<%= @collection.description %>
 			</h2>
-			<h3>
+
 				<%= image_tag @collection.image %>
-			</h3>
+
+			<% @collection.videos.each do |video| %>
+			<h2><%= video.title %></h2>
+			<%= video video.youtube_id %>
+
+
+			<% end %>
+
 			<h4>
 				<p>Followers: </p>
 				<%= @collection.followers.count %>
