@@ -1,7 +1,8 @@
 class CollectionsController < ApplicationController
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user, only: :destroy
-	layout 'application.html.erb', :except => [:index, :new, :create, :show]
+	layout 'application', :except => [:index, :new, :create, :show]
+
 
 	def new
 		@collection = Collection.new
@@ -12,7 +13,6 @@ class CollectionsController < ApplicationController
 		@collections = Collection.search(params[:search])
 	end
 
-
 	def create
 		@collection = current_user.collections.build(collection_params)
 		if @collection.save
@@ -22,7 +22,6 @@ class CollectionsController < ApplicationController
 			render 'collections#index'
 		end
 	end
-
 
 	def show
 		@collection = Collection.find(params[:id])

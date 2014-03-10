@@ -1,0 +1,10 @@
+class FollowersController < ApplicationController
+
+
+
+
+
+
+
+
+end 
