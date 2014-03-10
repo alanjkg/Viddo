@@ -12,9 +12,15 @@ class VideosController < ApplicationController
   def new
   end
 
+  def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+    redirect_to root_url
+  end
+
   def create
   end
-  
+
   private
 
 		def video_params
@@ -45,7 +51,7 @@ class VideosController < ApplicationController
         new_video.title = @youtube_video.snippet.title
         new_video.description = @youtube_video.snippet.description
         new_video.youtube_id = @youtube_video.id
-        
+
         new_video.save
 
         @video = new_video
