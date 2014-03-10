@@ -1,5 +1,6 @@
 <% provide(:title, 'All collections') %>
 <div class="container">
+
 	<h1>Collections</h1>
 		<h4>Videos grouped by theme or topic</h4>
 
@@ -9,19 +10,22 @@
 			<%= submit_tag "Search", :name => nil %>
 		</p>
 	<% end %> 
-
+</div>
 
 	<!-- Search function still	 not working  -->
-
+<div class="container">
 	<%= link_to "Make New Collection", new_collection_path %>
-
-	<div class="row">
-		<ul class="span6 offset3">
-			<% @collections.each do |collection| %>
-				<li> <%= link_to collection.title, collection_path(collection) %></li>
-			<% end %> 
-		</ul>
-	</div> 
 </div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-sm-12">
+			<% @collections.each do |collection| %>
+				<%= link_to collection.title, collection_path(collection) %>
+			<% end %> 
+		</div> 
+	</div>
+</div>
+
 
 

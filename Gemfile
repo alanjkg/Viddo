@@ -11,6 +11,7 @@ gem 'figaro'
 gem 'google-api-client'
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'acts_as_follower'
 
 group :development, :test do
 	gem 'sqlite3', '1.3.8'

@@ -10,7 +10,7 @@ class Collection < ActiveRecord::Base
 	validates :description, presence: true, length: { maximum: 175 }
 	validates :image, uniqueness: true
 
-
+	acts_as_followable
 	
 
 	def self.search(search)

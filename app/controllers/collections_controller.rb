@@ -4,6 +4,7 @@ class CollectionsController < ApplicationController
 	before_action :correct_user, only: :destroy
 	layout 'application', :except => [:index, :new, :create, :show]
 
+
 	def new
 		@collection = Collection.new
 	end
@@ -12,7 +13,6 @@ class CollectionsController < ApplicationController
 		@collections = Collection.all
 		@collections = Collection.search(params[:search])
 	end
-
 
 	def create
 		@collection = current_user.collections.build(collection_params)
@@ -24,8 +24,8 @@ class CollectionsController < ApplicationController
 		end
 	end
 
-
 	def show
+		@user = User.find(params[:id])
 		@collection = Collection.find(params[:id])
 		if current_user
 			@video = @collection.videos.build

@@ -16,6 +16,15 @@
 			<h3>
 				<%= image_tag @collection.image %>
 			</h3>
+			<h4>
+				<p>Followers: </p>
+				<%= @collection.followers.count %>
+			</h4>
+			<h5>
+				<%= button_to(@collection) do |f| %>
+				<%= @user.follow(@collection) %>
+				<% end %>
+			</h5>
 	</div>
-
 </div>
+
