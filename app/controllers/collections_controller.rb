@@ -24,6 +24,7 @@ class CollectionsController < ApplicationController
 	end
 
 	def show
+		@user = User.find(params[:id])
 		@collection = Collection.find(params[:id])
 		if current_user
 			@video = @collection.videos.build
