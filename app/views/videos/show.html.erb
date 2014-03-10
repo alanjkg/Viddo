@@ -6,7 +6,7 @@
 
 	<%= f.hidden_field :video_id, value: @video.id %>
 
-	<%= f.collection_select(:collection_id, Collection.all, :id, :title,
+	<%= f.collection_select(:collection_id, @collections, :id, :title,
 	:include_blank => "Please select a Collection...") %>
 
 	<%= f.label :'Leave a Comment' %>
