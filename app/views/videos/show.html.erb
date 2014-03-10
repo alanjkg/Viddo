@@ -12,10 +12,11 @@
 	<%= f.label :'Leave a Comment' %>
 	<%= f.text_field :description %>
 
-	<%= f.submit 'Add to Collection', class: 'btn btn-large btn-primary' %>
+	<%= f.submit 'Add to Collection', collection_path(video.collection) %>
 <% end %>
 
 </div>
+
 
 <!--
 	params = {

@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user, only: :destroy
-	layout 'application', :except => [:index, :new, :create, :show]
+	layout 'application.html.erb', :except => [:index, :new, :create, :show]
 
 	def new
 		@collection = Collection.new
