@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-	before_action :signed_in_user, only: [:create, :destroy]
+	before_action :signed_in_user, only: [:new, :create, :destroy]
 	# before_action :load_collection_user, except: [:add_video]
 	before_action :correct_user, only: :destroy
 	layout 'application', :except => [:index, :new, :create, :show]
