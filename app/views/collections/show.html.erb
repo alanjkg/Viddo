@@ -2,8 +2,8 @@
 <!-- <div class="row">
 	<div class="span4">
 
+-->
 
- -->
  <div class="row">
  	<div class="col-md-6 col-md-offset-1">
 		<%= link_to "Edit", edit_collection_path(@collection) %>
@@ -18,21 +18,13 @@
 
 			<% @collection.videos.each do |video| %>
 			<h2><%= video.title %></h2>
-			<%= video video.youtube_id %>
+			<%= video video.youtube_id.to_s %>
 
 			<%= link_to "Delete", video, :confirm => "Are you sure you want to delete this video?", :method => :delete %>
 
 			<% end %>
 
-			<h4>
-				<p>Followers: </p>
-				<%= @collection.followers.count %>
-			</h4>
-			<h5>
-				<%= button_to(@collection) do |f| %>
-				<%= @user.follow(@collection) %>
-				<% end %>
-			</h5>
+
 	</div>
 </div>
 

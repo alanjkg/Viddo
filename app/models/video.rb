@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
     has_and_belongs_to_many :collections
-    validates :youtube_id, uniqueness: true
+    validates :youtube_id, uniqueness: true, presence: true
 
     # def input_videos
     #     @video = Video.new
@@ -24,4 +24,4 @@ class Video < ActiveRecord::Base
     #         video.save
     #     end
     # end
-end 
+end
