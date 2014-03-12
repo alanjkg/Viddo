@@ -10,4 +10,10 @@
 			</h1>
 		</section>
 	</aside>
+	<% @followed_collections.each do |collection| %>
+		<%= collection.title %>
+		<%= collection.videos.each do |video| %>
+			<%= video video.youtube_id.to_s %>
+		<% end %>
+	<% end %>
 </div> 
