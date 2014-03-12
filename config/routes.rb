@@ -1,14 +1,16 @@
 Viddo::Application.routes.draw do
   # match '/add_video_to_collection', to: 'collections_videos#create', via: 'post'
-  resources :users do
-    resources :collections
-  end
+  resources :collections
+  resources :users
 
-  resources :collections do
+  resources :collections do 
     collection do
       patch :add_video
     end
   end
+
+  get 'users/:id/collections/:id/user_follow' => 'collections#user_follow', as: 'user_follow'
+  get 'users/:id/collections/:id/stop_following' => 'collections#stop_following', as: 'stop_following'
 
   resources :videos
   
@@ -22,7 +24,5 @@ Viddo::Application.routes.draw do
   match '/about',       to: 'pages#about',          via: 'get'
   match '/contact',     to: 'pages#contact',        via: 'get'
   match '/join',        to: 'pages#join',           via: 'get'
-
-  match '/collections', to: 'collections#index',    via: 'get'
 
 end

@@ -14,7 +14,7 @@
 				<%= @collection.description %>
 			</h2>
 
-				<%= image_tag @collection.image %>
+			<%= image_tag @collection.image %>
 
 			<% @collection.videos.each do |video| %>
 			<h2><%= video.title %></h2>
@@ -24,7 +24,10 @@
 
 			<% end %>
 
+			<%= link_to "Follow Collection", user_follow_path %>
+			<%= @user.follow_count %>
 
+			<%= link_to "Stop Following", stop_following_path %>
 	</div>
 </div>
 
