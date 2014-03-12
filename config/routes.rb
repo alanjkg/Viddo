@@ -4,9 +4,10 @@ Viddo::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :users do
-    resources :collections
+    resources :collections do
+      patch 'user_follow'
+    end
   end
-
 
   resources :collections do 
     collection do
@@ -14,8 +15,8 @@ Viddo::Application.routes.draw do
     end
   end
 
-  get 'users/:id/collections/:id/user_follow' => 'collections#user_follow', as: 'user_follow'
-  get 'users/:id/collections/:id/stop_following' => 'collections#stop_following', as: 'stop_following'
+  get 'users/:user_id/collections/:id/user_follow' => 'collections#user_follow', as: 'user_follow'
+  get 'users/:user_id/collections/:id/stop_following' => 'collections#stop_following', as: 'stop_following'
   
   root 'pages#home'
 

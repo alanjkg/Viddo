@@ -2,9 +2,8 @@ class CollectionsController < ApplicationController
 	before_action :signed_in_user, only: [:new, :create, :destroy]
 	# before_action :load_collection_user, except: [:add_video]
 	before_action :correct_user, only: :destroy
-	before_action :load_user, only: :show
+	# before_action :load_user
 	layout 'application', :except => [:index, :new, :create, :show]
-
 
 	def new
 		@collection = Collection.new
@@ -26,7 +25,7 @@ class CollectionsController < ApplicationController
 	end
 
 	def show
-		# @user = User.find(params[:id])
+		@user = User.find(params[:user_id])
 		@collection = Collection.find(params[:id])
 	end
 
@@ -65,7 +64,7 @@ class CollectionsController < ApplicationController
 		redirect_to collection_path(collection)
 	end
 
-	def stop_following
+	def stop_follow
 		collection = Collection.find(params[:id])	
 		current_user.stop_following(collection)
 		redirect_to collection_path(collection)
@@ -92,8 +91,8 @@ class CollectionsController < ApplicationController
 			redirect_to root_url if @collection.nil?
 		end
 
-		def load_user
-			@user = User.find(params[:id])
-		end
+		# def load_user
+		# 	@user = User.find(params[:user_id])
+		# end
 end
 

@@ -24,8 +24,8 @@
 
 			<% end %>
 
-			<%= link_to "Follow Collection", user_follow_path %>
-			<%= @user.follow_count %>
+			<%= link_to "Follow Collection", user_collection_user_follow_path(@user, collection_id: @collection) %>
+			<%#= @user.follow_count %>
 
 			<%= link_to "Stop Following", stop_following_path %>
 	</div>
