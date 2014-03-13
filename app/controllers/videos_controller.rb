@@ -15,7 +15,7 @@ class VideosController < ApplicationController
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
-    redirect_to root_url
+    redirect_to collection_path
   end
 
   def create

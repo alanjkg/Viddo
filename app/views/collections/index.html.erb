@@ -23,7 +23,7 @@
 			<div class="row">
 				<div class="col-xs-6 col-sm-12">
 					<% @collections.each do |collection| %>
-						<h5><%= link_to collection.title, user_collection_path(collection.user_id, collection.id) %></h5>
+						<h5><%= link_to collection.title, collection_path(collection) %></h5>
 						<% end %>
 					</div>
 				</div>

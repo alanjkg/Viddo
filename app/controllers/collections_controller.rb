@@ -20,7 +20,7 @@ class CollectionsController < ApplicationController
 			flash[:success] = "New Collection created!"
 			redirect_to collections_url
 		else
-			render 'collections#index'
+			render :new
 		end
 	end
 
