@@ -8,7 +8,6 @@ class Collection < ActiveRecord::Base
 	validates :title, uniqueness: { case_sensitive: false }
 
 	validates :description, presence: true, length: { maximum: 175 }
-	validates :image, uniqueness: true
 
 	acts_as_followable
 

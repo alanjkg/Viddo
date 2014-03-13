@@ -3,26 +3,24 @@ Viddo::Application.routes.draw do
   resources :videos
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :users do
-    resources :collections do
-      patch 'user_follow'
-    end
-  end
-
   resources :collections do
+    member do
+      patch :user_follow
+      patch :stop_following
+    end
+
     collection do
       patch :add_video
     end
   end
 
-  get 'users/:user_id/collections/:id/user_follow' => 'collections#user_follow', as: 'user_follow'
-  get 'users/:user_id/collections/:id/stop_following' => 'collections#stop_following', as: 'stop_following'
+  resources :users
 
   root 'pages#home'
 
   get '/signup' => 'users#new', as: 'signup'
   get '/signin' => 'sessions#new', as: 'signin'
-  match '/signout' => 'sessions#destroy', :via=> :delete
+  delete '/signout' => 'sessions#destroy'
   get '/about' => 'pages#about', as: 'about'
   get '/contact' => 'pages#contact', as: 'contact'
   get '/join' => 'pages#join', as: 'join'

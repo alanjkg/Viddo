@@ -5,29 +5,31 @@
 -->
 
  <div class="row">
- 	<div class="col-md-6 col-md-offset-1">
-		<%= link_to "Edit", edit_collection_path(@collection) %>
-			<h1>
-				<%= @collection.title %>
-			</h1>
-			<h2>
-				<%= @collection.description %>
-			</h2>
+ 	<div class='text-center'>
+	 	<div class="col-md-6 col-md-offset-1">
+			<%= link_to "Edit", edit_collection_path(@collection) %>
+				<h1>
+					<%= @collection.title %>
+				</h1>
+				<h2>
+					<%= @collection.description %>
+				</h2>
 
-			<%= image_tag @collection.image %>
+				<%= image_tag @collection.image %>
 
-			<% @collection.videos.each do |video| %>
-			<h2><%= video.title %></h2>
-			<%= video video.youtube_id.to_s %>
+				<% @collection.videos.each do |video| %>
+				<h2><%= video.title %></h2>
+				<%= video video.youtube_id.to_s %>
 
-			<%= link_to "Delete", video, :confirm => "Are you sure you want to delete this video?", :method => :delete %>
+				<%= link_to "Delete", video, :confirm => "Are you sure you want to delete this video?", :method => :delete %>
 
-			<% end %>
+				<% end %>
 
-			<%= link_to "Follow Collection", user_collection_user_follow_path(@user, collection_id: @collection) %>
-			<%#= @user.follow_count %>
+				<%= link_to "Follow Collection", user_follow_collection_path(@collection), :method => :patch %>
+				<%#= @user.follow_count %>
 
-			<%= link_to "Stop Following", stop_following_path %>
+				<%= link_to "Stop Following", stop_following_collection_path(@collection), :method => :patch %>
+		</div>
 	</div>
 </div>
 

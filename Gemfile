@@ -12,6 +12,7 @@ gem 'google-api-client'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'acts_as_follower'
+# gem 'acts_as_votable', '~> 0.8.0'
 
 group :development, :test do
 	gem 'sqlite3', '1.3.8'
