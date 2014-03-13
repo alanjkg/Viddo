@@ -1,7 +1,8 @@
 <div class="container">
-	<h2><%= @video.title %></h2>
-	<%= video @video.youtube_id %>
-
+	<div class='text-center'>
+		<h2><%= @video.title %></h2>
+		<%= video @video.youtube_id %>
+	
 
 	<%= form_tag add_video_collections_path, method: :patch do %>
 		<%= hidden_field_tag :video_id, @video.id %>
@@ -13,7 +14,7 @@
 
 	<% end %>
 
-
+	</div>
 </div>
 
 

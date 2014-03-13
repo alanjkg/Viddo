@@ -1,7 +1,9 @@
 <div class="container">
-    <h2>Most Popular Videos</h2>
+	<div class='text-center'> 
+	    <h2>Most Popular Videos</h2>
 
-<% @videos.each do |video| %>
-    <%= link_to video.title, video_path(video) %><br/>
-<% end %>
-</div>
+		<% @videos.each do |video| %>
+		    <%= link_to video.title, video_path(video) %><br/>
+		<% end %>
+	</div>
+</div> 

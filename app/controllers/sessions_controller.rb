@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+layout 'application', :except => [:index, :new, :create, :show]
 
 	def new
 	end

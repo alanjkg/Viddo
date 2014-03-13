@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  layout 'application', :except => [:index, :new, :create, :show]
+  
   def home
 
   end
