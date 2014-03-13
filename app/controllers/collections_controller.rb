@@ -25,8 +25,9 @@ class CollectionsController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:user_id])
 		@collection = Collection.find(params[:id])
+		@user = User.find(params[:user_id])
+
 	end
 
 
@@ -59,13 +60,13 @@ class CollectionsController < ApplicationController
 	end
 
 	def user_follow
-		collection = Collection.find(params[:id])	
+		collection = Collection.find(params[:id])
 		current_user.follow(collection)
 		redirect_to collection_path(collection)
 	end
 
 	def stop_follow
-		collection = Collection.find(params[:id])	
+		collection = Collection.find(params[:id])
 		current_user.stop_following(collection)
 		redirect_to collection_path(collection)
 	end
