@@ -9,7 +9,7 @@ Viddo::Application.routes.draw do
     end
   end
 
-  resources :collections do 
+  resources :collections do
     collection do
       patch :add_video
     end
@@ -17,12 +17,12 @@ Viddo::Application.routes.draw do
 
   get 'users/:user_id/collections/:id/user_follow' => 'collections#user_follow', as: 'user_follow'
   get 'users/:user_id/collections/:id/stop_following' => 'collections#stop_following', as: 'stop_following'
-  
+
   root 'pages#home'
 
   get '/signup' => 'users#new', as: 'signup'
   get '/signin' => 'sessions#new', as: 'signin'
-  get '/signout' => 'sessions#destroy', as: 'signout'
+  match '/signout' => 'sessions#destroy', :via=> :delete
   get '/about' => 'pages#about', as: 'about'
   get '/contact' => 'pages#contact', as: 'contact'
   get '/join' => 'pages#join', as: 'join'
