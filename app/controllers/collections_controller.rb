@@ -26,7 +26,6 @@ class CollectionsController < ApplicationController
 
 	def show
 		@collection = Collection.find(params[:id])
-		@user = User.find(params[:user_id])
 
 	end
 
@@ -65,7 +64,7 @@ class CollectionsController < ApplicationController
 		redirect_to collection_path(collection)
 	end
 
-	def stop_follow
+	def stop_following
 		collection = Collection.find(params[:id])
 		current_user.stop_following(collection)
 		redirect_to collection_path(collection)
