@@ -1,15 +1,19 @@
 <div id="hero">
-<div class="container">
-  	<% if signed_in? %>
-   	<h1>Welcome back, <%= current_user.name %></h1>
-   	<h3>Nice to see you again!</h3>
-		 <%= link_to "Discover Videos", videos_path, class: "button" %>
-	<% else %>
-		<h1>Watching Videos With Strangers Doesn't Have to be Awkward</h1>
-		<h4>Chat about, share and discover the best videos as curated by you.</h4>
-		 <%= link_to "Sign up now!", signup_path, class: "button" %>
-	<% end %>
-  </div>
+    <div class="container">
+        <div id="layer">
+            <div id="tagline">
+          	<% if signed_in? %>
+           	<h1>Welcome back, <%= current_user.name %></h1>
+           	<h4>Don't you have more important things to do?</h4>
+        		 <%= link_to "Discover Videos", videos_path, class: "btn home-btn" %>
+        	<% else %>
+        		<h1>Watching Videos With Strangers Doesn't Have to be Awkward</h1>
+        		<h4>Chat about, share and discover the best videos as curated by you.</h4>
+        		 <%= link_to "Sign up now!", signup_path, class: "btn home-btn" %>
+        	<% end %>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="about">

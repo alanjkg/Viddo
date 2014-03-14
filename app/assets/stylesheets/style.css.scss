@@ -28,7 +28,7 @@ h1, h2 {
 .btn {
     border-radius: 3px;
     color: #fff;
-
+    border: 0;
 }
 
 
@@ -46,6 +46,23 @@ h1, h2 {
     }
 }
 
+.home-btn {
+    background: #CE0A31;
+    padding: 1em 2em;
+    &:hover {
+        background: #8D2036;
+        color: #fff;
+    }
+
+}
+
+/* Collections */
+.collection {
+    background: #f9f9f9;
+    border-radius: 2px;
+    height: 120px;
+    text-align: center;
+}
 /* Form styles */
 input[type="email"], input[type="password"] {
     background: #fff;
@@ -109,9 +126,14 @@ input[type="submit"] {
 }
 
 /* Comments */
-.comments {
+.comments-field {
     background: #f9f9f9;
     padding: 3em 1em;
+}
+
+.comment {
+    padding: 1em 0;
+    border-bottom: 1px solid #e9e9e9;
 }
 
 /* Home page styles */
@@ -119,8 +141,13 @@ input[type="submit"] {
 #hero {
     background: #fff url('hero.jpeg') no-repeat top;
     background-size: cover;
-    color: #333; 
+    color: #fff;
     height: 450px;
+    padding-top: 4em;
+    #tagline {
+        background: rgba(0,0,0,0.3);
+        padding: 1em;
+    }
 }
 
 #about {

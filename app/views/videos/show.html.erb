@@ -1,6 +1,6 @@
 <div class="container">
 		<h2><%= @video.title %></h2>
-		<%= video @video.youtube_id %>
+		<%= video_helper @video.youtube_id %>
 
 	<div class="collection-field">
 		<%= form_tag add_video_collections_path, method: :patch do %>
@@ -10,18 +10,16 @@
 				:include_blank => "Please select a Collection...") %>
 
 			<%= submit_tag 'Add to Collection', class: 'btn btn-large btn-primary' %>
-
 		<% end %>
 	</div>
 
-	<div class="comments">
+	<div class="comments-field">
 	<%= form_for ([@video, @comment]) do |f| %>
 		<%= f.text_area :blog, placeholder: 'Share your thoughts...' %>
 		<%= f.submit %>
 		<% @video.comments.each do |comment| %>
 			<div class="comment">
-				<%= comment.blog %> by:
-				<strong><%= comment.user.name %></strong>
+				<%= comment.blog %><br/>Written by <%= comment.user.name %> <%= comment.created_at.strftime("on %B %d at %I:%M %p") %>
 			</div>
 		<% end %>
 	<% end %>

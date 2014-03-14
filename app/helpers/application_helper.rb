@@ -10,8 +10,8 @@ module ApplicationHelper
 		end
 	end
 
-     def video video_id
-        video = '<iframe id="player" type="text/html" width="640" height="390"
+     def video_helper video_id
+        video = '<iframe id="player" type="text/html" width="100%" height="500px"
         src="http://www.youtube.com/embed/' + video_id + '?enablejsapi=1&origin=http://localhost:3000"
         frameborder="0"></iframe>'
 

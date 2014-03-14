@@ -1,6 +1,5 @@
 <% provide(:title, 'All collections') %>
 <div class="container">
-	<div class="text-center">
 			<h1>Collections</h1>
 				<h4>Videos grouped by theme or topic</h4>
 
@@ -10,26 +9,18 @@
 					<%= submit_tag "Search", :name => nil %>
 				</p>
 		<% end %>
-	</div>
 
-	<div class="container">
-		<div class="text-center">
-			<%= link_to "Make New Collection", new_collection_path %>
-		</div> 
-	</div>
+			<%= link_to "Create Collection", new_collection_path, class: "submit-btn	" %>
 
-	<div class="container">
-		<div class='text-center'>
 			<div class="row">
-				<div class="col-xs-6 col-sm-12">
 					<% @collections.each do |collection| %>
-						<h5><%= link_to collection.title, collection_path(collection) %></h5>
+						<div class="col-md-3 collection">
+						<h3><%= link_to collection.title, collection_path(collection) %></h3>
+						</div>
 						<% end %>
-					</div>
 				</div>
-			</div>
-		</div> 
-	</div>
+</div> 
+	
 
 
 
