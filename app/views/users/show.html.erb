@@ -12,7 +12,7 @@
 		<%= collection.title %>
 		<% collection.videos.each do |video| %>
 			<h3><%= video.title %></h3>
-			<%= video video.youtube_id.to_s %>
+			<%= video_helper video.youtube_id.to_s %>
 		<% end %>
 	<% end %>
 </div> 

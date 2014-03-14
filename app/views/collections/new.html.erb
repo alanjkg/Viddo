@@ -1,11 +1,41 @@
 <% provide(:title, 'New Collection') %>
 
-<div class= "row">
- <div class="col-md-6 col-md-offset-1">
+<div class="container">
+    <div class= "row">
 
-<h1>New Collection</h1>
+    <div id="new-collection-form">
+        <h1>Create a new collection</h1>
+        <%= form_for @collection do |f| %>
+            <% if @collection.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@collection.errors.count, "error") %> prohibited this collection: from being saved:</h2>
 
-<%= render 'form' %>
+                <ul>
+                    <% @collection.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+            <% end %>
 
-</div>
+                    <%= form_for(@collection) do |f| %>
+                    <div class="input-group">
+                    <%= f.label :'Name your collection here' %>
+                    <%= f.text_field :title, class: 'form-control' %>
+                    </div>
+                    <div class="input-group">
+                    <%= f.label :'Describe your collection here' %>
+                    <%= f.text_field :description, class: 'form-control' %>
+                    </div>
+                    <div class="input-group">
+                    <%= f.label :'Insert collection picture here' %>
+                    <%= f.text_field :image, class: 'form-control' %>
+                    </div>
+
+                    <%= f.submit 'Make new collection', class: 'btn btn-large btn-primary' %>
+                    <% end %>
+            <% end %>
+
+    </div>
+    </div>
 </div>

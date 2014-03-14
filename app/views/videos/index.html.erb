@@ -1,9 +1,13 @@
 <div class="container">
-	<div class='text-center'> 
 	    <h2>Most Popular Videos</h2>
 
 		<% @videos.each do |video| %>
-		    <%= link_to video.title, video_path(video) %><br/>
+            <div class="video-description">
+            <%= image_tag "https://i1.ytimg.com/vi/#{video.youtube_id}/hqdefault.jpg" %>
+		    <h3><%= link_to video.title, video_path(video) %></h3><br/>
+            <p><%= truncate(video.description, length: 140) %></p>
+            <span class="time"><%= video.created_at.strftime("Video added on %B %d at %I:%M %p") %></span>
+            </div>
+
 		<% end %>
-	</div>
 </div> 
