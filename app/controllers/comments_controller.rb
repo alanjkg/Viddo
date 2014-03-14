@@ -11,7 +11,12 @@ class CommentsController < ApplicationController
 		@comment.user_id = current_user.id
 		if @comment.save
 			flash[:success] = "Thanks for the comment!"
-			redirect_to video_path(@video)
+			respond_to do |format|
+				format.html { redirect_to video_path(@video) }
+				format.json do
+					render :json => @comment.to_json
+				end
+			end
 		else
 			render :new
 		end

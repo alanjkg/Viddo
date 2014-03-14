@@ -14,12 +14,17 @@
 
 	<% end %>
 
-		<%= render '/comments/form' %>
-
+	
+	<%= form_for ([@video, @comment]) do |f| %>
+		<%= f.text_field :blog, placeholder: 'Share your thoughts...' %>
+		<%= f.submit %>
+	<% end %>
 
 <div class="container">
 		<% @video.comments.each do |comment| %>
-			<%= comment.blog %>
+			<div class="comment">
+				<%= comment.blog %>
+			</div>
 		<% end %>
 	</div>
 
