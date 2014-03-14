@@ -1,13 +1,57 @@
-  <div class="container">
+<div id="hero">
+<div class="container">
   	<% if signed_in? %>
    	<h1>Welcome back, <%= current_user.name %></h1>
    	<h3>Nice to see you again!</h3>
 		 <%= link_to "Discover Videos", videos_path, class: "button" %>
 	<% else %>
-    <div class="jumbotron">
 		<h1>Watching Videos With Strangers Doesn't Have to be Awkward</h1>
 		<h4>Chat about, share and discover the best videos as curated by you.</h4>
 		 <%= link_to "Sign up now!", signup_path, class: "button" %>
-    </div>
 	<% end %>
   </div>
+</div>
+
+<div id="about">
+    <div class="container">
+        <h1>Introducing Viddo</h1>
+
+        <div class="col-md-4">
+            <h2>Collect and store videos</h2>
+            <p>Viddo provides a beautiful platform for collecting and storing videos by category, genre and tags</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Share</h2>
+            <p>With our state of the art recommendation and sharing features, share your videos through Viddo or through social media like never before</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Community</h2>
+            <p>Watch videos with a community of friendly and awkward friends</p>
+        </div>
+    </div>
+
+</div>
+
+<div id="team">
+    <div class="container">
+        <h2>Meet our team</h2>
+        <p>We love building beautiful products</p>
+        <div class="col-sm-3">
+        <h2>Kareem Kwong</h2>
+        <h5>Kareem was born in Toronto. He enjoys long walks in winter storms and playing tennis. His dream is to one day be invited to attend Paris Fashion Week.</h5>
+        </div>
+
+        <div class="col-sm-3">
+        <h2>Alan Kong</h2>
+        <h5>Alan was born in Toronto. He enjoys long walks in winter storms and playing tennis. His dream is to one day be invited to attend Paris Fashion Week.</h5>
+        </div>
+        <div class="col-sm-3">
+        <h2>Richard Li</h2>
+        <h5>Richard was born in Toronto. He enjoys long walks in winter storms and playing tennis. His dream is to one day be invited to attend Paris Fashion Week.</h5>
+        </div>
+        <div class="col-sm-3">
+        <h2>Maybe you?</h2>
+        <h5>Come work for us. We need a developer or engineer to rebuild our app.   </h5>
+        </div>
+    </div>
+</div>

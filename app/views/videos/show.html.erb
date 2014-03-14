@@ -1,38 +1,35 @@
 <div class="container">
-	<div class='text-center'>
 		<h2><%= @video.title %></h2>
 		<%= video @video.youtube_id %>
 
+	<div class="collection-field">
+		<%= form_tag add_video_collections_path, method: :patch do %>
+			<%= hidden_field_tag :video_id, @video.id %>
 
-	<%= form_tag add_video_collections_path, method: :patch do %>
-		<%= hidden_field_tag :video_id, @video.id %>
+			<%= collection_select(:collection, :id, @collections, :id, :title,
+				:include_blank => "Please select a Collection...") %>
 
-		<%= collection_select(:collection, :id, @collections, :id, :title,
-		:include_blank => "Please select a Collection...") %>
+			<%= submit_tag 'Add to Collection', class: 'btn btn-large btn-primary' %>
 
-		<%= submit_tag 'Add to Collection', class: 'btn btn-large btn-primary' %>
+		<% end %>
+	</div>
 
-	<% end %>
-
-
+	<div class="comments">
 	<%= form_for ([@video, @comment]) do |f| %>
-		<%= f.text_field :blog, placeholder: 'Share your thoughts...' %>
+		<%= f.text_area :blog, placeholder: 'Share your thoughts...' %>
 		<%= f.submit %>
-	<% end %>
-
-<div class="container">
 		<% @video.comments.each do |comment| %>
 			<div class="comment">
 				<%= comment.blog %> by:
 				<strong><%= comment.user.name %></strong>
 			</div>
 		<% end %>
+	<% end %>
 	</div>
 
 
 
 
-	</div>
 
 
 </div>

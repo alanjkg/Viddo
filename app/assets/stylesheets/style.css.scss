@@ -1,6 +1,6 @@
 body {
     background: #fff;
-    font: 16px 'Helvetica Neue', 'Helvetica', sans-serif;
+    font: 16px 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
     margin: 0;
     padding: 0;
 
@@ -14,7 +14,14 @@ a {
     }
 }
 
+.container {
+    width: 70%;
+}
+
 /* Typography */
+h1, h2 {
+    font-weight: 700;
+}
 
 /* Button */
 
@@ -23,8 +30,11 @@ a {
     color: #fff;
 
 }
+
+
+
 .submit-btn {
-    background: #345;
+    background: #7AB317;
     font-size: 1.2em;
     margin-top: 1em;
     padding: 0.5em 2em;
@@ -37,15 +47,47 @@ a {
 }
 
 /* Form styles */
+input[type="email"], input[type="password"] {
+    background: #fff;
+    border: #c9c9c9;
+    &:focus {
+        border: #c9c9c9;
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+textarea {
+    border: 0;
+    width: 500px;
+    height: 65px;
+    color: #999;
+
+}
+input[type="submit"] {
+    background: #7AB317;
+    border-radius: 3px;
+    color: #fff;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    border: 0;
+}
 #sign-in-form {
     background: #f9f9f9;
+    width: 400px;
     padding: 2em 1em;
     margin-top: 1em;
 }
 
 .navbar-default .navbar-nav > li > a {
     color: #999;
-    font-weight: 700;
+    font-size: 1em;
+
+
+
+    &:hover {
+        color: #888;
+    }
 }
 
 .navbar {
@@ -62,19 +104,51 @@ a {
     }
 }
 
+#sign-in-view {
+    margin: 0 auto;
+}
+
+/* Comments */
+.comments {
+    background: #f9f9f9;
+    padding: 3em 1em;
+}
+
+/* Home page styles */
+
+#hero {
+    background: #fff url('hero.jpeg') no-repeat top;
+    background-size: cover;
+    color: #333; 
+    height: 450px;
+}
+
+#about {
+    background: #f9f9f9;
+    min-height: 350px;
+    padding: 4em 0;
+    text-align: center;
+}
+#team {
+    background: #4DBCE9;
+    color: #fff;
+    min-height: 300px;
+    text-align: center;
+    padding: 4em 0;
+}
+
 /* Footer */
 .footer {
-    background: #DBDBDB;
+    background: #20293F;
     min-height: 200px;
     padding: 2em 0;
-    margin-top: 10em;
 
     ul {
         li {
             display: inline-block;
             text-decoration: none;
             a {
-            color: #555;
+            color: #fff;
                 &:hover {
                     color: #fff;
                 }
