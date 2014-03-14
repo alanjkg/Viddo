@@ -9,9 +9,10 @@ body {
 }
 
 a {
-    color: #555;
+    color: #00BCD1;
+    font-weight: 400;
     &:hover {
-        color: #888;
+        color: #a1a1a1;
         text-decoration: none;
     }
 }
@@ -87,6 +88,7 @@ h1, h2 {
     background: #f9f9f9;
     border-radius: 2px;
     height: 120px;
+    margin: 0 0.1em 0 1em;
     text-align: center;
 }
 /* Form styles */
@@ -150,6 +152,9 @@ input[type="submit"] {
         color: #30D8F0;
         font-size: 1.3em;
         font-weight: 700;
+        &:hover {
+        color: #2B879E;
+        }
     }
 }
 
@@ -201,6 +206,12 @@ input[type="submit"] {
     padding: 4em 0;
 }
 
+/* User page styles */
+.user-collections {
+    background: #f9f9f9;
+    padding: 1em;   
+    margin-top: 1em;
+}
 /* Video Index styles */
 .video-description {
     background: #f9f9f9;

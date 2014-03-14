@@ -15,17 +15,3 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function(){
-    $('.video').on('load', function(e) {
-        var _this = $(this);
-        e.preventDefault();
-
-        $.ajax({
-            url: '/discover',
-            dataType: 'json',
-            method: 'GET',
-            data: _this.serialize(data)
-        })
-    })
-})

@@ -19,7 +19,8 @@
 		<%= f.submit %>
 		<% @video.comments.each do |comment| %>
 			<div class="comment">
-				<%= comment.blog %><br/>Written by <%= comment.user.name %> <%= comment.created_at.strftime("on %B %d at %I:%M %p") %>
+				<%= comment.blog %><br/>
+				<span class="time">Written by <%= comment.user.name %> <%= comment.created_at.strftime("on %B %d at %I:%M %p") %></span>
 			</div>
 		<% end %>
 	<% end %>

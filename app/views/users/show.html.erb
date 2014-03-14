@@ -1,19 +1,19 @@
 <% provide(:title, @user.name) %> 
 <div class="container">
 <div class="row">
-	<aside class="span4"> 
 		<section>
-			<h1><%= @user.name %></h1>
+			<h1>Hey <%= @user.name %></h1>
 			<h5><%= @user.email %></h5>
 		</section>
-	</aside>
 	<h2>Your Collections</h2>
 	<% @followed_collections.each do |collection| %>
-		<%= collection.title %>
-		<% collection.videos.each do |video| %>
-			<h3><%= video.title %></h3>
-			<%= video_helper video.youtube_id.to_s %>
-		<% end %>
+		<div class="user-collections">
+			<h1>Collection: <%= link_to collection.title, collection_path(collection) %></h1>
+			<% collection.videos.each do |video| %>
+				<h3><%= link_to video.title, video_path(video) %></h3>
+				<%= video_helper video.youtube_id.to_s %>
+			<% end %>
+		</div>
 	<% end %>
 </div> 
 </div>
