@@ -14,7 +14,7 @@
 
 	<% end %>
 
-	
+
 	<%= form_for ([@video, @comment]) do |f| %>
 		<%= f.text_field :blog, placeholder: 'Share your thoughts...' %>
 		<%= f.submit %>
@@ -23,7 +23,8 @@
 <div class="container">
 		<% @video.comments.each do |comment| %>
 			<div class="comment">
-				<%= comment.blog %>
+				<%= comment.blog %> by:
+				<strong><%= comment.user.name %></strong>
 			</div>
 		<% end %>
 	</div>
