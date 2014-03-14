@@ -12,18 +12,22 @@
 <% end %>
 
 <div class="row">
-	<div class="span6 offset3">
 		<%= form_for(@collection) do |f| %>
+		<div class="input-group">
 		<%= f.label :'Name your collection here' %>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, class: 'form-control' %>
+		</div>
+		<div class="input-group">
 		<%= f.label :'Describe your collection here' %>
-		<%= f.text_field :description %>
+		<%= f.text_field :description, class: 'form-control' %>
+		</div>
+		<div class="input-group">
 		<%= f.label :'Insert collection picture here' %>
-		<%= f.text_field :image %>
+		<%= f.text_field :image, class: 'form-control' %>
+		</div>
 
 		<%= f.submit 'Make new collection', class: 'btn btn-large btn-primary' %>
 		<% end %>
-		<% end %>
+<% end %>
 
-	</div>
 </div>
