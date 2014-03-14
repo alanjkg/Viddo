@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :correct_user, only: :destroy
+	before_action :signed_in_user, only: :create
 	before_action :load_video, :only => :create
 
 	def new
