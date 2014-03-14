@@ -25,12 +25,14 @@
 
 				<% end %>
 
-				<% if @collection.followed_by?(current_user) %>
-				<%= link_to "Stop Following", stop_following_collection_path(@collection), :method => :patch %>
+				<% if signed_in? %>
+					<% if @collection.followed_by?(current_user) %>
+					<%= link_to "Stop Following", stop_following_collection_path(@collection), :method => :patch %>
 
-				<%#= @user.follow_count %>
-				<% else %>
-				<%= link_to "Follow Collection", user_follow_collection_path(@collection), :method => :patch %>
+					<%#= @user.follow_count %>
+					<% else %>
+					<%= link_to "Follow Collection", user_follow_collection_path(@collection), :method => :patch %>
+					<% end %>
 				<% end %>
 		</div>
 	</div>

@@ -58,6 +58,11 @@ class CollectionsController < ApplicationController
 		redirect_to collection_path(@collection)
 	end
 
+	def remove_video
+		@video_to_delete = @collection.videos.find(params[:id])
+		@video_to_delete.destroy
+	end
+
 	def user_follow
 		collection = Collection.find(params[:id])
 		current_user.follow(collection)
