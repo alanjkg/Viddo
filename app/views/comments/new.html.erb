@@ -1,0 +1,14 @@
+<% provide(title:'New comment') %>
+	<div class='container'>
+		<h1>New comment</h1>
+			<%= form_for @comment do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+				<div class='input group'>
+					<%= f.label :blog %>
+					<%= f.text_field :blog, class: 'form-control' %>
+				</div>
+			<%= f.submit 'Add my comment', class: 'btn btn-primary btn-lg' %>
+			<% end %>
+	</div>
+
+

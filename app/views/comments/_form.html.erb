@@ -1,0 +1,4 @@
+<%= form_for ([@video, @comment]) do |f| %>
+		<%= f.text_field :blog, placeholder: 'Share your thoughts...' %>
+		<%= f.submit %>
+	<% end %>

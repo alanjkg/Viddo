@@ -1,6 +1,9 @@
 Viddo::Application.routes.draw do
   # match '/add_video_to_collection', to: 'collections_videos#create', via: 'post'
-  resources :videos
+  resources :videos do
+    resources :comments
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :collections do

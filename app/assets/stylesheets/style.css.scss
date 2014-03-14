@@ -2,7 +2,7 @@ body {
     font: 16px 'Helvetica Neue', 'Helvetica', sans-serif;
     margin: 0;
     padding: 0;
-    
+
 }
 
 a {
@@ -21,7 +21,7 @@ a {
     color: #fff;
     border-radius: 1px;
     margin-top: 1em;
-    padding: 1em 2em;
+    padding: 0.5em 2em;
     &:hover {
         color: #fff;
     }
@@ -58,7 +58,7 @@ a {
             a {
             color: #555;
                 &:hover {
-                    color: #fff;   
+                    color: #fff;
                 }
             }
 

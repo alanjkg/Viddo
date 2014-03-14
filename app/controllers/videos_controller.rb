@@ -6,6 +6,8 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @comments = @video.comments.all
+    @comment = @video.comments.build
     @collections = Collection.all
   end
 

@@ -2,7 +2,7 @@
 	<div class='text-center'>
 		<h2><%= @video.title %></h2>
 		<%= video @video.youtube_id %>
-	
+
 
 	<%= form_tag add_video_collections_path, method: :patch do %>
 		<%= hidden_field_tag :video_id, @video.id %>
@@ -14,8 +14,26 @@
 
 	<% end %>
 
+		<%= render '/comments/form' %>
+
+
+<div class="container">
+		<% @video.comments.each do |comment| %>
+			<%= comment.blog %>
+		<% end %>
 	</div>
+
+
+
+
+	</div>
+
+
 </div>
+
+
+
+
 
 
 <!--

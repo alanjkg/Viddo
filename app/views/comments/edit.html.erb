@@ -1,0 +1,19 @@
+<% provide(:title, 'Edit comment') %>
+	<div class='text-center'>
+		<h1>Update your comment</h1>
+	</div>
+
+<div class="row">
+	<div class='text-center'>
+		<div class="span6 offset3">
+			<%= form_for(@comment, @video) do |f| %>
+				<%= render 'shared/error_messages', object: f.object %>
+
+					<%= f.label :blog %>
+					<%= f.text_field :blog %>
+
+					<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>
